@@ -1,4 +1,4 @@
-package com.aq.test;
+package com.aq.controller;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

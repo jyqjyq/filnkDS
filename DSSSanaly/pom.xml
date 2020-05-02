@@ -6,11 +6,6 @@
     <groupId>com.aq.flink</groupId>
     <artifactId>DSSSanaly</artifactId>
     <version>1.0-SNAPSHOT</version>
-<!--    <parent>-->
-<!--        <groupId>org.apache.flink</groupId>-->
-<!--        <artifactId>flink-examples</artifactId>-->
-<!--        <version>1.6.1</version>-->
-<!--    </parent>-->
 
     <properties>
         <scala.version>2.11.12</scala.version>
@@ -18,26 +13,6 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.flink</groupId>-->
-<!--            <artifactId>flink-java</artifactId>-->
-<!--            <version>1.6.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.flink</groupId>-->
-<!--            <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>-->
-<!--            <version>1.6.1</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.apache.flink</groupId>-->
-<!--            <artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId>-->
-<!--            <version>1.6.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.flink</groupId>-->
-<!--            <artifactId>flink-shaded-jackson</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-java</artifactId>
@@ -68,6 +43,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aq.flink</groupId>
+            <artifactId>DSAnalyCommon</artifactId>
+            <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
