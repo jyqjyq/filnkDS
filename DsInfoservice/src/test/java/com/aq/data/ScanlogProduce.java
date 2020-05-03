@@ -96,7 +96,7 @@ public class ScanlogProduce {
 
             String jonstr = JSONObject.toJSONString(userscanLog);
             System.out.println(jonstr);
-            UrlsendUtil.sendmessage("http://127.0.0.1:6097/DsInfoSjService/webInfoSJService",jonstr);
+            UrlsendUtil.sendmessage("http://127.0.0.1:8080/DsInfoSjService/webInfoSJService",jonstr);
         }
 
     }

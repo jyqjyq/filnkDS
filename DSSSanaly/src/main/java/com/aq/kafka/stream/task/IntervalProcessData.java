@@ -6,6 +6,7 @@ import com.aq.kafka.stream.map.PindaoKafkaMap;
 import com.aq.kafka.stream.reduce.PindaoReduce;
 import com.aq.kafka.transfer.KafkaMessageSchema;
 import com.aq.kafka.transfer.KafkaMessageWatermarks;
+import com.aq.util.RedisUtil;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.streaming.api.TimeCharacteristic;
@@ -20,12 +21,12 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 public class IntervalProcessData {
     public static void main(String[] args) {
 
-        args = new String[]{"--input-topic", "test3", "--bootstrap.servers", "111.231.99.181:9092",
-                "--zookeeper.connect", "111.231.99.181:2181", "--group.id", "myconsumer1", "--winsdows.size", "50", "--winsdows.slide", "5"};
+//        args = new String[]{"--input-topic", "test3", "--bootstrap.servers", "111.231.99.181:9092",
+//                "--zookeeper.connect", "111.231.99.181:2181", "--group.id", "myconsumer1", "--winsdows.size", "10", "--winsdows.slide", "5"};
 
         final ParameterTool parameterTool = ParameterTool.fromArgs(args);
-
-        if (parameterTool.getNumberOfParameters() < 6) {
+        System.out.println(parameterTool.getNumberOfParameters());
+        if (parameterTool.getNumberOfParameters() < 4) {
             System.out.println("Missing parameters!\n" +
                     "Usage: Kafka --input-topic <topic>" +
                     "--bootstrap.servers <kafka brokers> " +
@@ -41,6 +42,8 @@ public class IntervalProcessData {
         env.getConfig().setGlobalJobParameters(parameterTool); // make parameters available in the web interface
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
+        System.out.println("parameterTool.getRequired(\"input-topic\"):"+parameterTool.getRequired("input-topic"));
+        System.out.println("parameterTool.getProperties():"+parameterTool.getProperties().toString());
 
         FlinkKafkaConsumer010 flinkKafkaConsumer = new FlinkKafkaConsumer010<KafkaMessage>(parameterTool.getRequired("input-topic"), new KafkaMessageSchema(), parameterTool.getProperties());
         DataStream<KafkaMessage> input = env.addSource(flinkKafkaConsumer.assignTimestampsAndWatermarks(new KafkaMessageWatermarks()));
@@ -52,6 +55,7 @@ public class IntervalProcessData {
                 long count = value.getCount();
                 long pindaoid = value.getPingdaoid();
                 System.out.println("输出==pindaoid" + pindaoid + ":" + count);
+                RedisUtil.jedis.lpush("pingdaord:"+pindaoid,count+"");
             }
         }).name("pdrdreduce");
         try {

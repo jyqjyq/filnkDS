@@ -20,8 +20,8 @@ import javax.annotation.Nullable;
 
 public class Kafka010Example {
     public static void main(String[] args) throws Exception {
-        args = new String[]{"--input-topic","test3","--output-topic","test4","--bootstrap.servers","111.231.99.181:9092",
-                "--zookeeper.connect","111.231.99.181:2181","--group.id","myconsumer1"};
+//        args = new String[]{"--input-topic","test3","--output-topic","test4","--bootstrap.servers","111.231.99.181:9092",
+//                "--zookeeper.connect","111.231.99.181:2181","--group.id","myconsumer1"};
         // parse input arguments
         final ParameterTool parameterTool = ParameterTool.fromArgs(args);
 
@@ -51,7 +51,7 @@ public class Kafka010Example {
                 .map(new RollingAdditionMapper());
 
         input.addSink(
-                new FlinkKafkaProducer010<>(
+                new FlinkKafkaProducer010<KafkaEvent>(
                         parameterTool.getRequired("output-topic"),
                         new KafkaEventSchema(),
                         parameterTool.getProperties()));
@@ -85,7 +85,7 @@ public class Kafka010Example {
 
         @Override
         public void open(Configuration parameters) throws Exception {
-            currentTotalCount = getRuntimeContext().getState(new ValueStateDescriptor<>("currentTotalCount", Integer.class));
+            currentTotalCount = getRuntimeContext().getState(new ValueStateDescriptor<Integer>("currentTotalCount", Integer.class));
         }
     }
 

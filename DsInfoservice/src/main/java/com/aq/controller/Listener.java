@@ -9,7 +9,7 @@ public class Listener {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-    @KafkaListener(topics = {"test"})
+    @KafkaListener(topics = {"test3"})
     public void listen(ConsumerRecord<?, ?> record) {
         logger.info("kafka的key: " + record.key());
         logger.info("kafka的value: " + record.value().toString());

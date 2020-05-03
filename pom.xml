@@ -8,7 +8,9 @@
     <artifactId>DSFlinkanaly</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
     <modules>
         <module>DSSSanaly</module>
         <module>dsinfoservice</module>
@@ -16,7 +18,20 @@
     </modules>
 
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
 
+    </build>
 
 
 </project>
