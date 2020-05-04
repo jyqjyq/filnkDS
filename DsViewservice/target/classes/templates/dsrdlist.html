@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:each="pingdaord:${result}">
+
+        <td th:text="${pingdaord}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -15,6 +15,7 @@
         <module>DSSSanaly</module>
         <module>dsinfoservice</module>
         <module>DSAnalyCommon</module>
+        <module>DsViewservice</module>
     </modules>
 
 

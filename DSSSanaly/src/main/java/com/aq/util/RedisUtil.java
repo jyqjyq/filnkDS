@@ -12,8 +12,8 @@ public class RedisUtil {
     }
 
     public static void main(String[] args) {
-        jedis.set("test3","test33");
-        String value = jedis.get("test3");
+        jedis.set("aq","aq");
+        String value = jedis.get("aq");
         System.out.println(value);
     }
 }
