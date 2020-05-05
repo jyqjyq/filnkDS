@@ -9,5 +9,6 @@ com\aq\kafka\stream\task\IntervalProcessData$1.class
 com\aq\util\RedisUtil.class
 com\aq\kafka\transfer\KafkaMessageSchema.class
 com\aq\kafka\transfer\KafkaMessageWatermarks.class
+com\aq\util\HbaseUtil.class
 com\aq\kafka\test\Kafka010Example$CustomWatermarkExtractor.class
 com\aq\kafka\test\KafkaEventSchema.class

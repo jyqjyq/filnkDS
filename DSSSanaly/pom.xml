@@ -13,8 +13,18 @@
         <scala.binary.version>2.11</scala.binary.version>
         <java.version>1.8</java.version>
     </properties>
-
-
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+<!--        <releases>-->
+<!--            <enabled>true</enabled>-->
+<!--        </releases>-->
+<!--        <snapshots>-->
+<!--            <enabled>true</enabled>-->
+<!--        </snapshots>-->
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -56,6 +66,28 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>1.0.0-cdh5.5.1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.hadoop</groupId>-->
+<!--            <artifactId>hadoop-common</artifactId>-->
+<!--            <version>2.7.5</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.hadoop</groupId>-->
+<!--            <artifactId>hadoop-hdfs</artifactId>-->
+<!--            <version>2.7.5</version>-->
+<!--        </dependency>-->
+
+        <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
@@ -72,8 +104,6 @@
             <version>2.2.6.RELEASE</version>
             <scope>compile</scope>
         </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
