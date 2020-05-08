@@ -37,7 +37,7 @@ public class DsInfoSjService {
         jsonStr = JSON.toJSONString(kafkaMessage);
         System.out.println("hello 进来了==转换kafkamessage之后的=="+jsonStr);
         //业务开始
-        kafkaTemplate.send("test1","key",jsonStr);
+        kafkaTemplate.send("test5","key",jsonStr);
         //业务结束
         PrintWriter printWriter = getWriter(response);
         response.setStatus(HttpStatus.OK.value());

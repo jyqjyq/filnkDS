@@ -34,4 +34,5 @@ public class Pindaopvuvsinkreduce implements SinkFunction<PidaoPvUv> {
         HbaseUtil.put("pindaoinfo",pingdaoid+timestring,"info",datamap);
 
     }
+
 }

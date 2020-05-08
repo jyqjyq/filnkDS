@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DsViewservice" />
         <module name="DsInfoservice" />
         <module name="DSAnalyCommon" />
+        <module name="DsViewservice" />
         <module name="DSSSanaly" />
       </profile>
     </annotationProcessing>

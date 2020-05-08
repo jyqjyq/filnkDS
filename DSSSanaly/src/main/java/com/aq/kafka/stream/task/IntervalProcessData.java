@@ -21,8 +21,8 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 public class IntervalProcessData {
     public static void main(String[] args) {
 
-//        args = new String[]{"--input-topic", "test3", "--bootstrap.servers", "111.231.99.181:9092",
-//                "--zookeeper.connect", "111.231.99.181:2181", "--group.id", "myconsumer1", "--winsdows.size", "10", "--winsdows.slide", "5"};
+        args = new String[]{"--input-topic", "test5", "--bootstrap.servers", "111.231.99.181:9092",
+                "--zookeeper.connect", "111.231.99.181:2181", "--group.id", "myconsumer1", "--winsdows.size", "10", "--winsdows.slide", "5"};
 
         final ParameterTool parameterTool = ParameterTool.fromArgs(args);
         System.out.println(parameterTool.getNumberOfParameters());
