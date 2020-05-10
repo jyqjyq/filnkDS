@@ -7,18 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dsinterfaceservice" />
+        <module name="DsViewservice" />
         <module name="DsInfoservice" />
         <module name="DSAnalyCommon" />
-        <module name="DsViewservice" />
-        <module name="DSSSanaly" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DsInterfaceService" target="1.8" />
+      <module name="DsInterfaceService (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DSSSanaly" options="" />
       <module name="DsInfoservice" options="-parameters" />
+      <module name="DsInterfaceService" options="-parameters" />
       <module name="DsViewservice" options="-parameters" />
+      <module name="dsinterfaceservice" options="-parameters" />
     </option>
   </component>
 </project>
