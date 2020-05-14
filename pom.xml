@@ -17,6 +17,7 @@
         <module>DSAnalyCommon</module>
         <module>DsViewservice</module>
         <module>DsInterfaceService</module>
+        <module>DSservicecenterserver</module>
     </modules>
 
 

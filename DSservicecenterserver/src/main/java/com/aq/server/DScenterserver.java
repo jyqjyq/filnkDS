@@ -1,15 +1,15 @@
-package com.aq;
+package com.aq.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  */
 @SpringBootApplication
-@EnableFeignClients
-public class StartViewService {
+@EnableEurekaServer
+public class DScenterserver {
     public static void main(String[] args) {
-        SpringApplication.run(StartViewService.class,args);
+        SpringApplication.run(DScenterserver.class,args);
     }
 }

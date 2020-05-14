@@ -1,4 +1,4 @@
-package com.aq.control;
+package com.aq.server;
 
 import com.aq.batch.analy.ProductAnaly;
 import com.aq.utils.HbaseUtil;

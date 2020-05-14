@@ -11,6 +11,7 @@
         <module name="DsViewservice" />
         <module name="DsInfoservice" />
         <module name="DSAnalyCommon" />
+        <module name="DSservicecenterserver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DSSSanaly" options="" />
+      <module name="DSservicecenterserver" options="-parameters" />
       <module name="DsInfoservice" options="-parameters" />
       <module name="DsInterfaceService" options="-parameters" />
       <module name="DsViewservice" options="-parameters" />
